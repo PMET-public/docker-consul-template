@@ -11,4 +11,4 @@ RUN apt-get update && \
   apt-get clean && \
   rm -rf /var/lib/{apt,dpkg,cache,log}/ /tmp/* /var/tmp/*
 
-CMD /consul-template/consul-template -consul $CONSUL_IP:8500 -config "${CONFIG_FILE}"
+CMD /consul-template/consul-template -consul $CONSUL_IP:8500 -config "${CONFIG_FILE:-/etc/consul-template}"
